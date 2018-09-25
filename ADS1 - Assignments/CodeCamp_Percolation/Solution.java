@@ -79,28 +79,28 @@ class Percolation implements PercolationAPI {
         if (row == 1) {
             qf.union(getQFIndex(row, col), top);
         }
-        
+
         if (row == size) {
             qf.union(getQFIndex(row, col), bottom);
         }
-        
+
         if (col > 1 && isOpen(row, col - 1)) {
             qf.union(getQFIndex(row, col), getQFIndex(row, col - 1));
         }
-        
+
         if (col < size && isOpen(row, col + 1)) {
             qf.union(getQFIndex(row, col), getQFIndex(row, col + 1));
         }
-        
+
         if (row > 1 && isOpen(row - 1, col)) {
             qf.union(getQFIndex(row, col), getQFIndex(row - 1, col));
         }
-        
+
         if (row < size && isOpen(row + 1, col)) {
             qf.union(getQFIndex(row, col), getQFIndex(row + 1, col));
         }
     }
-    
+
     /**
      * Determines if open.
      * @param      row   The row
@@ -110,7 +110,7 @@ class Percolation implements PercolationAPI {
     public boolean isOpen(final int row, final int col) {
         return matrix[row - 1][col - 1];
     }
-    
+
     /**
      * Percolates method to find whether the matrix percolates or not.
      * @return     True if percolates, False otherwise.
@@ -118,7 +118,7 @@ class Percolation implements PercolationAPI {
     public boolean percolates() {
         return qf.connected(top, bottom);
     }
-    
+
     /**
      * Gets the qf index.
      * @param      row   The row index.
@@ -187,7 +187,7 @@ class WeightedQuickUnionUF {
         int n = parent.length;
         if (p < 0 || p >= n) {
             throw new IllegalArgumentException("index " + p
-                   + " is not between 0 and " + (n - 1));
+               + " is not between 0 and " + (n - 1));
         }
     }
     /**
