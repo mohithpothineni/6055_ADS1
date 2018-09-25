@@ -1,0 +1,2 @@
+from the presented data it is clear that quion weighted path compression is best
+it has less number of computations required for finding the root and union operation
