@@ -12,7 +12,7 @@ final class Solution {
     private Solution() {
 
     }
-    
+
     /**
      * main method that prints the count of pairs.
      * @param      args  The arguments
