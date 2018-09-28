@@ -1,0 +1,73 @@
+a. 4 3 2 1 0 9 8 7 6 5
+
+Push elements from o to 4.
+
+Pop 4, print 4
+
+Pop 3, print 3
+
+Pop 2, print 2
+
+Pop 1, print 1
+
+Pop 0, print 0
+
+Push elements from 5 to 9
+
+Pop 9, print 9
+
+Pop 8 print 8
+
+Pop 7 print 7
+
+Pop 6, print 6
+
+Pop 5, print 5
+
+Possible
+
+b. 4 6 8 7 5 3 2 9 0 1
+
+Push elements from 0 to 4
+
+Pop 4, Print 4
+
+Push elements from 4 to 6
+
+Pop 6, Print 6
+
+Push elements from 6 to 8
+
+Pop 8, Print 8
+
+Pop 7, Print 7
+
+Pop 5 error
+
+Reason the pop will yield 6 but not 5
+
+Not possible
+
+c. 2 5 6 7 4 8 9 3 1 0
+
+Possible
+
+d. 4 3 2 1 0 5 6 7 8 9
+
+Possible
+
+e. 1 2 3 4 5 6 9 8 7 0
+
+Possible
+
+f. 0 4 6 5 3 8 1 7 2 9
+
+Not possible
+
+g. 1 4 7 9 8 6 5 3 0 2
+
+Not possible
+
+h. 2 1 4 3 6 5 8 7 9 0
+
+Possible
