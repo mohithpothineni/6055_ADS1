@@ -1,0 +1,25 @@
+ACTIVITY 4
+
+Question.
+Give the output printed by java Stack for the input (where "-" means pop) it was - the best - of times - - - it was - the - -
+
+Answer.
+Values inside the Stack
+
+It was
+
+It the best
+
+It the of times
+
+It it was
+
+It it the
+
+Remaining values in the Stack: 
+
+it
+
+The elements which are popped:
+
+Was, best, times, of, the, was, the, it
