@@ -113,6 +113,7 @@ public final class Solution {
             String[] tokens = scan.nextLine().split(" ");
             if (tokens[0].equals("")) {
                 steque = new Steque<Integer>();
+                System.out.println();
             } else {
                 switch (tokens[0]) {
                 case "push":
