@@ -94,7 +94,6 @@ class Stack<E>{
 class AddLargeNumbers {
     
     public static LinkedList<Integer> numberToDigits(String number) {
-        //System.out.println("number is "+number);
         LinkedList<Integer> digitsList = new LinkedList<Integer>();
         for (int i = 0; i < number.length(); i++) {
             //System.out.println("being pushed " + number.charAt(i));
@@ -106,8 +105,10 @@ class AddLargeNumbers {
     public static String digitsToNumber(LinkedList<Integer> list) {
         int k = list.size();
         String result = "";
+
+
         for (int i = 0 ;i < k; i++) {
-            int tmpp = list.pop();
+            Integer tmpp = list.pop();
             //System.out.println(tmpp);
             result += "" + tmpp;
         }
