@@ -1,0 +1,11 @@
+
+
+
+In the first while loop the elements from the queue are pushed into the stack.
+
+In the second while loop the elements from the stack are enqueued into the queue in the reverse order.
+
+Example: 
+	if 1,2,3 are present in the queue then first 1 is pushed into the stack,then 2 and then 3.
+When elements from the stack are popped then first 3 is popped and added to the queue,then 2 and then 1.
+So queue consists of 3,2,1 which is reversed.
