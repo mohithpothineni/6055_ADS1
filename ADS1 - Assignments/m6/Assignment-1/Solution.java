@@ -102,6 +102,8 @@ class AddLargeNumbers {
         return digitsList;
     }
 
+    //printing in reverse for digitsToNumber direct call.
+    //working when called from addLargeNumbers method.
     public static String digitsToNumber(LinkedList<Integer> list) {
         int k = list.size();
         String result = "";
