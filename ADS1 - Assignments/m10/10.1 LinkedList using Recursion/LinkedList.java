@@ -45,10 +45,18 @@ public class LinkedList<E> {
      * @param      reference  The reference
      *
      * @return     the element found that is to be added with new element.
+     * 
+     * Time complexity : O(n)
+     * as it iterates over the list to find the prev element.
      */
     Node<E> insertHelper(final int start, final int position,
         final Node<E> reference) {
         if (start >= position) {
+            return reference;
+        }
+
+        //at start
+        if (position == 0) {
             return reference;
         }
 
@@ -63,6 +71,9 @@ public class LinkedList<E> {
      *
      * @param      data      The data.
      * @param      position  The position.
+     * 
+     * Time complexity : O(n)
+     * as it searches for an element over the list.
      */
     void insert(final int position, final E data) {
         if (position > size || position < 0) {
@@ -70,58 +81,42 @@ public class LinkedList<E> {
             return;
         }
 
-        //at start
-        if (position == 0) {
-            //if head is null ie first addition.
-            if (head == null) {
-                head = new Node<E>();
-                head.data = data;
-                head.next = null;
-                tail = head;
-                size++;
-            } else {
-                //add before head element.
-                Node<E> tmp = new Node<E>();
-                tmp.data = data;
-                tmp.next = head;
-                head = tmp;
-                size++;
-            }
-            this.print();
-            return;
-        }
-
-
-
         Node<E> reference = head;
+        
         //recursively search for elemet to which
         //new element to be added.
         reference = this.insertHelper(1, position, reference);
+        
         Node<E> tmp = new Node<E>();
         tmp.data = data;
-        tmp.next = reference.next;
-        reference.next = tmp;
+        if (reference == null) {
+            head = tmp;
+        } else if (position == 0){
+            tmp.next = head;
+            head = tmp;
+        } else {
+            tmp.next = reference.next;
+            reference.next = tmp;
+            
+        }
+
         size++;
         this.print();
 
 
     }
 
-    /**
-     * inserts an element at start.
-     *
-     * @param      data  The data to be added.
-     */
-    void insertAtEnd(final E data) {
-        this.insert(this.size, data);
-    }
-
-
 
     /**
      * reverse through recusion.
      *
      * @return     reversed list chain.
+     * 
+     * Time complexity : O(nlogn)
+     * 
+     * as it deletes the last element using removeAtEnd
+     * as the size decreases the iterations also decrease.
+     * 
      */
     Node<E> reverseHelper() {
         int tmp = this.size;
@@ -154,6 +149,10 @@ public class LinkedList<E> {
 
     /**
      * reverse the current head tail link.
+     * 
+     * Time complexity : O(n)
+     * as it iterates over the element by using reverseHelper.
+     * 
      */
     void reverse() {
         if (this.size == 0) {
@@ -166,23 +165,20 @@ public class LinkedList<E> {
     }
 
 
-
-    /**
-     * insert an element at start of list.
-     *
-     * @param      data  The data to be added.
-     */
-    void insertAtStart(final E data) {
-        this.insert(0, data);
-    }
-
-
     /**
      * remove element from list at a position.
      *
      * @param      position  The position
      *
      * @return     the element removed.
+     * 
+     * Time complexity : O(1) when removed at start
+     * Time complexity : O(n) when removed at a position
+     * 
+     * constant time as there is no requirement fro iteration
+     * 
+     * O(n) when it needs iteration.
+     * 
      */
     E remove(final int position) {
         if (position > size || head == null || position < 0) {
@@ -229,22 +225,20 @@ public class LinkedList<E> {
      * Removes an element at end.
      *
      * @return     the element removed.
+     * 
+     * Time complexity : O(n)
+     * need to iterate from head to tail.
      */
     E removeAtEnd() {
         return this.remove(this.size - 1);
     }
 
-    /**
-     * Removes an element at start.
-     *
-     * @return     the removed element from the list.
-     */
-    E removeAtStart() {
-        return this.remove(0);
-    }
 
     /**
      * prints the elements in the list.
+     * 
+     * Time complexity : O(n)
+     * it iterates over the list of n elements.
      */
     void print() {
         Node<E> reference = this.head;
