@@ -140,17 +140,7 @@ class StudentsData {
             }
         }        
 
-        if (bccountflag != this.bccount) {
-            for (int i = 0; i < this.students.length; i++) {
-            if (bccountflag != this.bccount && !isIn(this.students[i])) {
-                this.allotStudents[this.size2++] = this.students[i];
-                bccountflag++;       
-            }
-            if (bccountflag == this.bccount) {
-                break;
-            }
-        }            
-        }
+        
 
         
         //sc search
@@ -161,6 +151,21 @@ class StudentsData {
                 sccountflag++;
             } 
             if (sccountflag == this.sccount) {
+                break;
+            }
+        }        
+
+        
+
+        //st search
+        int stcountflag = 0;
+        for (int i = 0; i < this.students.length; i++) {
+            if (this.students[i].categeory.equals("ST") && stcountflag != this.stcount && !isIn(this.students[i])) {
+                this.allotStudents[this.size2++] = this.students[i];
+                stcountflag++;
+                       
+            }
+            if (stcountflag == this.stcount) {
                 break;
             }
         }        
@@ -176,20 +181,7 @@ class StudentsData {
             }
         }
         }
-
-        //st search
-        int stcountflag = 0;
-        for (int i = 0; i < this.students.length; i++) {
-            if (this.students[i].categeory.equals("ST") && stcountflag != this.stcount && !isIn(this.students[i])) {
-                this.allotStudents[this.size2++] = this.students[i];
-                stcountflag++;
-                       
-            }
-            if (stcountflag == this.stcount) {
-                break;
-            }
-        }        
-
+        
         if (stcountflag != this.stcount) {
             for (int i = 0; i < this.students.length; i++) {
             if (stcountflag != this.stcount && !isIn(this.students[i])) {
@@ -203,6 +195,17 @@ class StudentsData {
         }
         }
 
+        if (bccountflag != this.bccount) {
+            for (int i = 0; i < this.students.length; i++) {
+            if (bccountflag != this.bccount && !isIn(this.students[i])) {
+                this.allotStudents[this.size2++] = this.students[i];
+                bccountflag++;       
+            }
+            if (bccountflag == this.bccount) {
+                break;
+            }
+        }            
+        }
         Arrays.sort(this.allotStudents);
         for (Student stu : this.allotStudents) {
             System.out.println(stu);

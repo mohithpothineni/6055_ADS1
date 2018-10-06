@@ -306,7 +306,7 @@ Ajay,76,Open
 Amit,76,Open
 Arjun,75,Open
 ----------------------------------------
-########## Testcase 5: Failed ##########
+########## Testcase 5: Passed ##########
 Expected Output: 
 divya,99,ST
 Deepak,99,Open
@@ -398,7 +398,7 @@ Aditya,80,ST
 Ajay,76,Open
 Amit,76,Open
 Arjun,75,Open
+rahul,73,Open
 priya,72,SC
-shyam,71,ST
 varsha,66,BC
 ----------------------------------------
