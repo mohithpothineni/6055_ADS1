@@ -1,16 +1,72 @@
 import java.util.Scanner;
 import java.util.Arrays;
 
-class Student implements Comparable<Student>{
-    String name;
-    String dob;
-    int subject1;
-    int subject2;
-    int subject3;
-    int totalMarks;
-    String categeory;
+/**
+ * Class for student.
+ */
+class Student implements Comparable<Student> {
+    /**
+     * name of student.
+     */
+    private String name;
 
-    Student(String namee, String dobirth, int sub1, int sub2, int sub3, int totalm, String categry) {
+    /**
+     * date of birth.
+     */
+    private String dob;
+
+    /**
+     * marks of sub1.
+     */
+    private int subject1;
+
+    /**
+     * marks of sub2.
+     */
+    private int subject2;
+
+    /**
+     * marks of sub3.
+     */
+    private int subject3;
+
+    /**
+     * total marks.
+     */
+    private int totalMarks;
+    /**
+     * categeory to which they belong.
+     */
+    private String categeory;
+
+    /**
+     * getter for categeory.
+     *
+     *Time complexity : O(1)
+     *
+     * @return     categeory of student.
+     */
+    String categeory() {
+        return this.categeory;
+    }
+
+
+    /**
+     * Constructs the object.
+     *
+     * @param      namee    The namee
+     * @param      dobirth  The dobirth
+     * @param      sub1     The sub 1
+     * @param      sub2     The sub 2
+     * @param      sub3     The sub 3
+     * @param      totalm   The totalm
+     * @param      categry  The categry
+     */
+    Student(final String namee, final String dobirth,
+        final int sub1, final int sub2,
+        final int sub3,
+        final int totalm,
+        final String categry) {
         this.name = namee;
         this.dob = dobirth;
         this.subject1 = sub1;
@@ -20,7 +76,18 @@ class Student implements Comparable<Student>{
         this.categeory = categry;
     }
 
-    public int compareTo(Student other) {
+    /**
+     * description for comparision.
+     *
+     * @param      other  The other object.
+     *
+     * @return     comparision flag.
+     *
+     * Time complexity : O(1)
+     * as it requires constant time for comparision.
+     *
+     */
+    public int compareTo(final Student other) {
         if (this.totalMarks > other.totalMarks) {
             return -1;
         } else if (this.totalMarks == other.totalMarks) {
@@ -36,7 +103,7 @@ class Student implements Comparable<Student>{
 
                     Integer year1 = Integer.parseInt(t1[2]);
                     Integer year2 = Integer.parseInt(t2[2]);
-                    
+
                     Integer month1 = Integer.parseInt(t1[1]);
                     Integer month2 = Integer.parseInt(t2[1]);
 
@@ -49,12 +116,12 @@ class Student implements Comparable<Student>{
                         if (month1.compareTo(month2) != 0) {
                             return month2.compareTo(month1);
                         } else {
-                            return day2.compareTo(day1); 
+                            return day2.compareTo(day1);
                         }
                     }
                 } else {
                     return 1;
-                }    
+                }
             } else {
                 return 1;
             }
@@ -63,7 +130,11 @@ class Student implements Comparable<Student>{
         }
     }
 
-
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         return this.name + "," + this.totalMarks + "," + this.categeory;
     }
@@ -71,22 +142,75 @@ class Student implements Comparable<Student>{
 
 }
 
+/**
+ * Class for students data.
+ */
 class StudentsData {
-    Student[] students;
-    int size = 0;
-    int size2 = 0;
-    int vacancies;
-    int unreserved;
-    int reserved;
-    int bccount;
-    int sccount;
-    int stcount;
+    /**
+     * students array.
+     */
+    private Student[] students;
 
-    Student[] allotStudents;
+    /**
+     * size of students array.
+     */
+    private int size = 0;
+    /**
+     * alloted students list size.
+     */
+    private int size2 = 0;
 
+    /**
+     * no of vacancies.
+     */
+    private int vacancies;
+    /**
+     *no of unreserved seats.
+     */
+    private int unreserved;
 
-    StudentsData(int noOfStudents, int noOfvacancy,
-        int noOfunreserved, int noOfreserved, int bccountt, int sccountt, int stcountt) {
+    /**
+     * no of reserved seats.
+     */
+    private int reserved;
+
+    /**
+     * bc count.
+     */
+    private int bccount;
+
+    /**
+     * sc count.
+     */
+    private int sccount;
+
+    /**
+     * st count.
+     */
+    private int stcount;
+
+    /**
+     * alloted students array.
+     */
+    private Student[] allotStudents;
+
+    /**
+     * Constructs the object.
+     *
+     * @param      noOfStudents    No of students
+     * @param      noOfvacancy     No ofvacancy
+     * @param      noOfunreserved  No ofunreserved
+     * @param      noOfreserved    No ofreserved
+     * @param      bccountt        The bccountt
+     * @param      sccountt        The sccountt
+     * @param      stcountt        The stcountt
+     */
+    StudentsData(final int noOfStudents, final int noOfvacancy,
+                 final int noOfunreserved,
+                 final int noOfreserved,
+                 final int bccountt,
+                 final int sccountt,
+                 final int stcountt) {
         this.students = new Student[noOfStudents];
         this.vacancies = noOfvacancy;
         this.unreserved = noOfunreserved;
@@ -97,10 +221,21 @@ class StudentsData {
         this.stcount = stcountt;
     }
 
-    void addStudent(Student studentt) {
+    /**
+     * Adds a student.
+     *
+     *Time complexity : O(1)
+     * @param      studentt  The studentt
+     */
+    void addStudent(final Student studentt) {
         students[size++] = studentt;
     }
 
+    /**
+     * Shows the merit list.
+     * Time complexity : O(n)
+     * n iterations.
+     */
     void showMeritList() {
         this.sort();
 
@@ -109,19 +244,38 @@ class StudentsData {
         }
     }
 
+    /**
+     * sorts ther data.
+     * Time complexity : O(nlogn)
+     * using merge sort internally.
+     */
     void sort() {
         Arrays.sort(this.students);
     }
 
-    boolean isIn(Student obj) {
+    /**
+     * Determines if the obj in the alloted list.
+     *
+     *Time complexity : O(n)
+     *n iterations
+     * @param      obj   The object
+     *
+     * @return     True if in, False otherwise.
+     */
+    boolean isIn(final Student obj) {
         for (Student stu : allotStudents) {
-            if(stu != null && stu.equals(obj)) {
+            if (stu != null && stu.equals(obj)) {
                 return true;
             }
         }
         return false;
     }
 
+    /**
+     * Shows the alloted students.
+     * Time complexity : O(n^2)
+     * searching and assigning.
+     */
     void showAlloted() {
         //merits irrespective of categeory
         for (int i = 0; i < this.unreserved; i++) {
@@ -131,80 +285,83 @@ class StudentsData {
         //bc search
         int bccountflag = 0;
         for (int i = 0; i < this.students.length; i++) {
-            if (this.students[i].categeory.equals("BC") && bccountflag != this.bccount && !isIn(this.students[i])) {
+            if (this.students[i].categeory().equals("BC")
+                && bccountflag != this.bccount && !isIn(this.students[i])) {
                 this.allotStudents[this.size2++] = this.students[i];
-                bccountflag++;       
+                bccountflag++;
             }
             if (bccountflag == this.bccount) {
                 break;
             }
-        }        
+        }
 
-        
 
-        
+
+
         //sc search
         int sccountflag = 0;
         for (int i = 0; i < this.students.length; i++) {
-            if (this.students[i].categeory.equals("SC") && sccountflag != this.sccount && !isIn(this.students[i])) {
+            if (this.students[i].categeory().equals("SC")
+                && sccountflag != this.sccount && !isIn(this.students[i])) {
                 this.allotStudents[this.size2++] = this.students[i];
                 sccountflag++;
-            } 
+            }
             if (sccountflag == this.sccount) {
                 break;
             }
-        }        
+        }
 
-        
+
 
         //st search
         int stcountflag = 0;
         for (int i = 0; i < this.students.length; i++) {
-            if (this.students[i].categeory.equals("ST") && stcountflag != this.stcount && !isIn(this.students[i])) {
+            if (this.students[i].categeory().equals("ST")
+                && stcountflag != this.stcount && !isIn(this.students[i])) {
                 this.allotStudents[this.size2++] = this.students[i];
                 stcountflag++;
-                       
+
             }
             if (stcountflag == this.stcount) {
                 break;
             }
-        }        
+        }
 
         if (sccountflag != this.sccount) {
             for (int i = 0; i < this.students.length; i++) {
-            if (sccountflag != this.sccount && !isIn(this.students[i])) {
-                this.allotStudents[this.size2++] = this.students[i];
-                sccountflag++;
-            } 
-            if (sccountflag == this.sccount) {
-                break;
+                if (sccountflag != this.sccount && !isIn(this.students[i])) {
+                    this.allotStudents[this.size2++] = this.students[i];
+                    sccountflag++;
+                }
+                if (sccountflag == this.sccount) {
+                    break;
+                }
             }
         }
-        }
-        
+
         if (stcountflag != this.stcount) {
             for (int i = 0; i < this.students.length; i++) {
-            if (stcountflag != this.stcount && !isIn(this.students[i])) {
-                this.allotStudents[this.size2++] = this.students[i];
-                stcountflag++;
-                       
+                if (stcountflag != this.stcount && !isIn(this.students[i])) {
+                    this.allotStudents[this.size2++] = this.students[i];
+                    stcountflag++;
+
+                }
+                if (stcountflag == this.stcount) {
+                    break;
+                }
             }
-            if (stcountflag == this.stcount) {
-                break;
-            }
-        }
         }
 
         if (bccountflag != this.bccount) {
             for (int i = 0; i < this.students.length; i++) {
-            if (bccountflag != this.bccount && !isIn(this.students[i])) {
-                this.allotStudents[this.size2++] = this.students[i];
-                bccountflag++;       
+                if (bccountflag != this.bccount && !isIn(this.students[i])) {
+                    this.allotStudents[this.size2++] = this.students[i];
+                    bccountflag++;
+                }
+                if (bccountflag == this.bccount) {
+                    break;
+                }
             }
-            if (bccountflag == this.bccount) {
-                break;
-            }
-        }            
         }
         Arrays.sort(this.allotStudents);
         for (Student stu : this.allotStudents) {
@@ -218,10 +375,29 @@ class StudentsData {
 
 }
 
+/**
+ * class for Solution.
+ */
+public final class Solution {
 
-class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
 
-    public static void main(String[] args) {
+    }
+
+    /**
+     * main fun reads input from user,
+     * calls the appropriate func,
+     * prints the output.
+     *
+     *Time complexity : O(N)
+     *need to read n number of inputs.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         int qualified = scan.nextInt();
         int vacancy = scan.nextInt();
@@ -230,26 +406,32 @@ class Solution {
         int scNo = scan.nextInt();
         int stNo = scan.nextInt();
 
-        StudentsData data = new StudentsData(qualified, vacancy, unreserved, vacancy - unreserved, bcNo, scNo, stNo);
+        StudentsData data = new StudentsData(qualified,
+            vacancy, unreserved, vacancy - unreserved, bcNo, scNo, stNo);
 
-        while(scan.hasNext()) {
+        while (scan.hasNext()) {
             String[] tokens = scan.nextLine().split(",");
+            final int three = 3;
+            final int four = 4;
+            final int five = 5;
+            final int six = 6;
+
             try {
-                data.addStudent(new Student(tokens[0],tokens[1],Integer.parseInt(tokens[2]),Integer.parseInt(tokens[3]),
-                Integer.parseInt(tokens[4]),Integer.parseInt(tokens[5]),tokens[6]));    
+                data.addStudent(new Student(tokens[0],
+                tokens[1], Integer.parseInt(tokens[2]),
+                Integer.parseInt(tokens[three]),
+                Integer.parseInt(tokens[four]),
+                Integer.parseInt(tokens[five]), tokens[six]));
             } catch (Exception e) {
                 //empty tokens array due to input glitch.
             }
-            
+
         }
 
-
-        
         data.showMeritList();
         System.out.println();
         data.showAlloted();
     }
 
-
-
 }
+
