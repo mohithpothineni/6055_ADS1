@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+
 /**
  * Class for binary search st.
  *
@@ -7,6 +8,7 @@ import java.util.ArrayList;
  * @param      <Value>  The value
  */
 class BinarySearchST<Key extends Comparable<Key>, Value> {
+
     /**
      * keys array of Key type.
      */
@@ -69,6 +71,8 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
      *
      * @param      k     The key.
      * @param      v     The value.
+     * 
+     * Time complexity : log(N).
      */
     public void put(final Key k, final Value v) {
         if (k == null) {
@@ -133,12 +137,15 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
             resize(keys.length / two);
         }
     }
+
     /**
      * Gives the value associated with the key.
      *
      * @param      k     The key.
      *
      * @return     The value of the given key.
+     * 
+     * Time complexity : log(N)
      */
     public Value get(final Key k) {
         if (isEmpty()) {
@@ -261,6 +268,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         return l;
     }
 }
+
 /**
  * Class for solution.
  */
