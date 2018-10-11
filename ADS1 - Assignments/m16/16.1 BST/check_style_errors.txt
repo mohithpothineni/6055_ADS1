@@ -1,7 +1,2 @@
 Starting audit...
-[ERROR] C:\Users\Mohath\Desktop\6055_ADS1\ADS1 - Assignments\m16\16.1 BST\Solution.java:175: Line has trailing spaces. [RegexpSingleline]
-[ERROR] C:\Users\Mohath\Desktop\6055_ADS1\ADS1 - Assignments\m16\16.1 BST\Solution.java:190: Line has trailing spaces. [RegexpSingleline]
-[ERROR] C:\Users\Mohath\Desktop\6055_ADS1\ADS1 - Assignments\m16\16.1 BST\Solution.java:193: Line has trailing spaces. [RegexpSingleline]
-[ERROR] C:\Users\Mohath\Desktop\6055_ADS1\ADS1 - Assignments\m16\16.1 BST\Solution.java:217: Line has trailing spaces. [RegexpSingleline]
 Audit done.
-Checkstyle ends with 4 errors.
