@@ -1,4 +1,2 @@
 Starting audit...
-[ERROR] C:\Users\Mohath\Desktop\6055_ADS1\ADS1 - Assignments\m16\16.1 BST\Solution.java:232: Class Solution should be declared as final. [FinalClass]
 Audit done.
-Checkstyle ends with 1 errors.

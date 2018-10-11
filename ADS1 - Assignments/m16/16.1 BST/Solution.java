@@ -229,7 +229,7 @@ class BinaryST {
 /**
  * Class for solution.
  */
-class Solution {
+final class Solution {
 
     /**
      * Constructs the object.
@@ -252,18 +252,18 @@ class Solution {
             String data = sc.nextLine();
             String[] tokens = data.split(",");
             switch (tokens[0]) {
-                case "put":
+            case "put":
                 Book book = new Book();
                 book = new Book(tokens[1], tokens[2],
-                    Double.parseDouble((tokens[three])));
+                                Double.parseDouble((tokens[three])));
                 bst.put(book, tokens[four]);
                 break;
-                case "get":
+            case "get":
                 book = new Book(tokens[1], tokens[2],
-                    Double.parseDouble(tokens[three]));
+                                Double.parseDouble(tokens[three]));
                 System.out.println(bst.get(book));
                 break;
-                default:
+            default:
                 break;
             }
         }
