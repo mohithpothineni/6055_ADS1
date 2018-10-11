@@ -246,6 +246,7 @@ class Solution {
                 book = new Book(tokens[1], tokens[2],
                     Double.parseDouble((tokens[three])));
                 bst.put(book, tokens[four]);
+                break;
                 case "get":
                 book = new Book(tokens[1], tokens[2],
                     Double.parseDouble(tokens[three]));
