@@ -166,11 +166,15 @@ class BinaryST {
      */
     BinaryST() {
     }
+
     /**
      * Method to insert the key.
      *
      * @param      key    The key
      * @param      value  The value
+     * 
+     * Time complexity : Log(N)
+     * the insertion will be done based on trees.
      */
     public void put(final Book key, final String value) {
         root = put(root, key, value);
@@ -183,6 +187,10 @@ class BinaryST {
      * @param      value  The value
      *
      * @return     The node.
+     * 
+     * Time complexity : log(N)
+     * recursively iterates over the tree.
+     * 
      */
     public Node put(final Node x, final Book key, final String value) {
         if (x == null) {
@@ -206,6 +214,9 @@ class BinaryST {
      * @param      key   The key
      *
      * @return     The value of the key
+     * 
+     * Time complexity : Log(n)
+     * Iteration over tree.
      */
     public String get(final Book key) {
         Node x = root;
