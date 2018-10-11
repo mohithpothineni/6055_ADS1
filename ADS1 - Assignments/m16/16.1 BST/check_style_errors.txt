@@ -1,0 +1,5 @@
+Starting audit...
+[ERROR] C:\Users\Mohath\Desktop\6055_ADS1\ADS1 - Assignments\m16\16.1 BST\Solution.java:229: Missing a Javadoc comment. [JavadocType]
+[ERROR] C:\Users\Mohath\Desktop\6055_ADS1\ADS1 - Assignments\m16\16.1 BST\Solution.java:229:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
+Audit done.
+Checkstyle ends with 2 errors.
