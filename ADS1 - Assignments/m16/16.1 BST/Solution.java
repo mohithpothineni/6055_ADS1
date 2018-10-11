@@ -226,7 +226,18 @@ class BinaryST {
 
 }
 
+/**
+ * Class for solution.
+ */
 class Solution {
+
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+
+    }
+
     /**
      * main function.
      *
