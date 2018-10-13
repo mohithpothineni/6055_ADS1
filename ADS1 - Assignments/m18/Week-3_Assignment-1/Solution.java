@@ -59,7 +59,12 @@ final class Solution {
         }
 
         int noOfQueries = scan.nextInt();
+        if (noOfQueries == 0) {
+            return;
+        }
+
         scan.nextLine();
+        
         for (int i = 0; i < noOfQueries; i++) {
             String[] tokens = scan.nextLine().split(",");
             if (tokens[0].equals("get")) {
