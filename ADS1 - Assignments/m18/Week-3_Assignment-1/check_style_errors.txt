@@ -16,7 +16,7 @@ Starting audit...
 [ERROR] C:\Users\Mohath\Desktop\6055_ADS1\ADS1 - Assignments\m18\Week-3_Assignment-1\Solution.java:36:34: '5' is a magic number. [MagicNumber]
 [ERROR] C:\Users\Mohath\Desktop\6055_ADS1\ADS1 - Assignments\m18\Week-3_Assignment-1\Solution.java:48:27: ';' is preceded with whitespace. [NoWhitespaceBefore]
 [ERROR] C:\Users\Mohath\Desktop\6055_ADS1\ADS1 - Assignments\m18\Week-3_Assignment-1\Solution.java:48:34: '5' is a magic number. [MagicNumber]
-[ERROR] C:\Users\Mohath\Desktop\6055_ADS1\ADS1 - Assignments\m18\Week-3_Assignment-1\Solution.java:66:19: 'if' is not followed by whitespace. [WhitespaceAround]
+[ERROR] C:\Users\Mohath\Desktop\6055_ADS1\ADS1 - Assignments\m18\Week-3_Assignment-1\Solution.java:66:19: 'if' is not followed by whitespace. [WhitespaceAfter]
 [ERROR] C:\Users\Mohath\Desktop\6055_ADS1\ADS1 - Assignments\m18\Week-3_Assignment-1\Solution.java:88:20: Must have at least one statement. [EmptyBlock]
 [ERROR] C:\Users\Mohath\Desktop\6055_ADS1\ADS1 - Assignments\m18\Week-3_Assignment-1\Solution.java:101: Missing a Javadoc comment. [JavadocType]
 [ERROR] C:\Users\Mohath\Desktop\6055_ADS1\ADS1 - Assignments\m18\Week-3_Assignment-1\Solution.java:101:41: '>' is followed by an illegal character. [GenericWhitespace]
