@@ -15,7 +15,7 @@ class Stock implements Comparable<Stock> {
      * getter for name.
      *
      * @return     name of stock.
-     * 
+     *
      * Time complexity : O(1)
      * constant time.
      */
@@ -76,7 +76,7 @@ class Stock implements Comparable<Stock> {
      * Returns a string representation of the object.
      *
      * @return     String representation of the object.
-     * 
+     *
      * Time complexity : O(1)
      * constant time.
      */
@@ -105,9 +105,9 @@ final class Solution {
      * prints output to console.
      *
      * @param      args  The command line arguments
-     * 
+     *
      * Time complexity : O(n)
-     * 
+     *
      * based on no of inputs.
      */
     public static void main(final String[] args) {
@@ -121,9 +121,9 @@ final class Solution {
 
         //binary search symbol table
         BinarySearchST<String,  Integer> maxST =
-        new BinarySearchST<String, Integer>(noOfStocks);
+            new BinarySearchST<String, Integer>(noOfStocks);
         BinarySearchST<String, Integer> minST =
-        new BinarySearchST<String, Integer>(noOfStocks);
+            new BinarySearchST<String, Integer>(noOfStocks);
 
         for (int i = 0; i < hours; i++) {
             //create a min and max pq for every hour.
@@ -133,7 +133,7 @@ final class Solution {
             for (int j = 0; j < noOfStocks; j++) {
                 String[] tokens = scan.nextLine().split(",");
                 Stock stock = new Stock(tokens[0],
-                    Double.parseDouble(tokens[1]));
+                                        Double.parseDouble(tokens[1]));
                 minpq.insert(stock);
                 maxpq.insert(stock);
             }
