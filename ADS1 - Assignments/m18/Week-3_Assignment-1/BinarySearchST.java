@@ -1,4 +1,3 @@
-import java.util.Scanner;
 import java.util.ArrayList;
 
 /**
@@ -40,7 +39,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
      *
      * @return     { description_of_the_return_value }
      */
-     public int size() {
+    public int size() {
         return n;
     }
     /**
@@ -71,7 +70,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
      *
      * @param      k     The key.
      * @param      v     The value.
-     * 
+     *
      * Time complexity : log(N).
      */
     public void put(final Key k, final Value v) {
@@ -144,7 +143,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
      * @param      k     The key.
      *
      * @return     The value of the given key.
-     * 
+     *
      * Time complexity : log(N)
      */
     public Value get(final Key k) {
