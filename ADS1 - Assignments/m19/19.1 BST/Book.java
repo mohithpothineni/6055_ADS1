@@ -77,14 +77,15 @@ class Book implements Comparable<Book> {
      * @return     integer.
 
      */
-
     public int compareTo(final Book b) {
-
         return getName().compareTo(b.getName());
-
     }
 
-
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         return this.name + ", " + this.author + ", " + this.price;
     }
