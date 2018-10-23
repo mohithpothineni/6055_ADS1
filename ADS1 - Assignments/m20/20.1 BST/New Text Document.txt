@@ -1,0 +1,113 @@
+    /**
+     * Time complexity is O(N).
+     * Removes the smallest key and associated value from the symbol table.
+     *
+     * @throws NoSuchElementException if the symbol table is empty
+     */
+    public void deleteMin() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("Symbol table underflow");
+        }
+        root = deleteMin(root);
+        //assert check();
+    }
+    /**
+     * Time complexity is O(N).
+     * delete Min from BST.
+     *
+     * @param      x     Min Node to be deleted.
+     *
+     * @return     deleted Node.
+     */
+    private Node deleteMin(final Node x) {
+        if (x.left == null) {
+            return x.right;
+        }
+        x.left = deleteMin(x.left);
+        x.size = size(x.left) + size(x.right) + 1;
+        return x;
+    }
+
+    /**
+     * Time complexity is O(N).
+     * Removes the largest key and associated value from the symbol table.
+     *
+     * @throws NoSuchElementException if the symbol table is empty
+     */
+    public void deleteMax() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("Symbol table underflow");
+        }
+        root = deleteMax(root);
+        //assert check();
+    }
+    /**
+     * Time complexity is O(N).
+     * delete the Maximum Node in BST.
+     *
+     * @param      x     TheNode to be deleted.
+     *
+     * @return     Deleted Node.
+     */
+    private Node deleteMax(final Node x) {
+        if (x.right == null) {
+            return x.left;
+        }
+        x.right = deleteMax(x.right);
+        x.size = size(x.left) + size(x.right) + 1;
+        return x;
+    }
+
+    /**
+     * Time complexity is O(N).
+     * Removes the specified key and
+     * its associated value from this symbol table
+     * (if the key is in this symbol table).
+     *
+     * @param  key the key
+     * @throws IllegalArgumentException if {@code key} is {@code null}
+     */
+    public void delete(final Key key) {
+        if (key == null) {
+            throw new IllegalArgumentException(
+                "calls delete() with a null key");
+        }
+        root = delete(root, key);
+        //assert check();
+    }
+
+    /**
+     * Time complexity is O(N).
+     * delete the Node whose key is given.
+     *
+     * @param      x     The Node.
+     * @param      key   The key
+     *
+     * @return     The Node.
+     */
+    private Node delete(final Node x, final Key key) {
+        Node temp = x;
+        if (temp == null) {
+            return null;
+        }
+
+        int cmp = key.compareTo(temp.key);
+        if      (cmp < 0) {
+            temp.left  = delete(temp.left,  key);
+        } else if (cmp > 0) {
+            temp.right = delete(temp.right, key);
+        } else {
+            if (temp.right == null) {
+                return temp.left;
+            }
+            if (temp.left  == null) {
+                return temp.right;
+            }
+            Node t = temp;
+            temp = min(t.right);
+            temp.right = deleteMin(t.right);
+            temp.left = t.left;
+        }
+        temp.size = size(temp.left) + size(temp.right) + 1;
+        return temp;
+    }
