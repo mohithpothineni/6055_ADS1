@@ -17,7 +17,9 @@ final class Solution {
      * calls appropriate func.
      * prints output to console.
      *
-     * @param      args  The arguments
+     * @param      args  The command line arguments
+     *
+     * Time complexity : O(n)
      */
     public static void main(final String[] args) {
 
@@ -31,7 +33,7 @@ final class Solution {
             switch (tokens[0]) {
             case "put":
                 bst.put(new Book(tokens[1], tokens[2], tokens[three]),
-                    tokens[four]);
+                        tokens[four]);
                 break;
             case "get":
                 System.out.println(
