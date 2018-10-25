@@ -1,7 +1,7 @@
 import java.util.Comparator;
 /**
  * Class for minimum pq.
- * @param      <Key>  The key
+ * @param <Key> The key.
  */
 public class MinPQ<Key> {
     /**
@@ -17,6 +17,7 @@ public class MinPQ<Key> {
      */
     private Comparator<Key> comparator;
     /**
+     * Time complexity O(1).
      * Initializes an empty priority queue with the given initial capacity.
      * @param  initCapacity the initial capacity of this priority queue
      */
@@ -31,6 +32,7 @@ public class MinPQ<Key> {
         this(1);
     }
     /**
+     * Time complexity O(1).
      * Initializes an empty priority queue with the given initial capacity,
      * using the given comparator.
      * @param  initCapacity the initial capacity of this priority queue
@@ -42,6 +44,7 @@ public class MinPQ<Key> {
         n = 0;
     }
     /**
+     * Time complexity is O(1).
      * Returns true if this priority queue is empty.
      * @return {@code true} if this priority queue is empty;
      *         {@code false} otherwise
@@ -50,8 +53,9 @@ public class MinPQ<Key> {
         return n == 0;
     }
     /**
+     * Time complexity is O(N).
      * helper function to double the size of the heap array.
-     * @param      capacity  The capacity
+     * @param capacity The capacity
      */
     private void resize(final int capacity) {
         assert capacity > n;
@@ -62,6 +66,7 @@ public class MinPQ<Key> {
         pq = temp;
     }
     /**
+     * Time complexity is O(logN).
      * Adds a new key to this priority queue.
      * @param  x the key to add to this priority queue
      */
@@ -75,6 +80,7 @@ public class MinPQ<Key> {
         swim(n);
     }
     /**
+     * Time complexity is O(logN).
      * Removes and returns a smallest key on this priority queue.
      * @return a smallest key on this priority queue
      */
@@ -89,8 +95,9 @@ public class MinPQ<Key> {
         return min;
     }
     /**
+     * Time complexity is O(logN).
      * swim method.
-     * @param      k     index.
+     * @param k index.
      */
     private void swim(final int k) {
         int k1 = k;
@@ -100,8 +107,9 @@ public class MinPQ<Key> {
         }
     }
     /**
+     * Time complexity is O(logN).
      * sink method.
-     * @param      k     index.
+     * @param k index.
      */
     private void sink(final int k) {
         int k1 = k;
@@ -118,10 +126,11 @@ public class MinPQ<Key> {
         }
     }
     /**
+     * Time complexity is O(1).
      * greater method to compare the elements.
-     * @param      i     index.
-     * @param      j     index.
-     * @return     true or false.
+     * @param i index.
+     * @param j index.
+     * @return true or false.
      */
     private boolean greater(final int i, final int j) {
         if (comparator == null) {
@@ -130,10 +139,12 @@ public class MinPQ<Key> {
             return comparator.compare(pq[i], pq[j]) > 0;
         }
     }
+
     /**
+     * Time complexiy is O(1).
      * exch method to swap the elements.
-     * @param      i     index.
-     * @param      j     index.
+     * @param i index.
+     * @param j index.
      */
     private void exch(final int i, final int j) {
         Key swap = pq[i];
