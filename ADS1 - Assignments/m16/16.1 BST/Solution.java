@@ -36,6 +36,8 @@ class Book implements Comparable<Book> {
      * Gets the name.
      *
      * @return     The name.
+     *
+     * Time complexity O(1)
      */
     public String getName() {
         return name;
@@ -44,6 +46,7 @@ class Book implements Comparable<Book> {
      * Gets the author.
      *
      * @return     The author.
+     * Time complexity O(1)
      */
     public String getAuthor() {
         return author;
@@ -52,6 +55,7 @@ class Book implements Comparable<Book> {
      * Gets the price.
      *
      * @return     The price.
+     * Time complexity O(1)
      */
     public double getPrice() {
         return price;
@@ -62,6 +66,7 @@ class Book implements Comparable<Book> {
      * @param      that  The that
      *
      * @return     integer value +1,-1,0
+     * Time complexity O(1)
      */
     public int compareTo(final Book that) {
         return this.name.compareTo(that.name);
@@ -98,6 +103,7 @@ class Node {
      * Gets the key.
      *
      * @return     The key.
+     * Time complexity O(1)
      */
     public Book getKey() {
         return key;
@@ -106,6 +112,7 @@ class Node {
      * Gets the value.
      *
      * @return     The value.
+     * Time complexity O(1)
      */
     public String getValue() {
         return value;
@@ -114,6 +121,7 @@ class Node {
      * Gets the left.
      *
      * @return     The left.
+     * Time complexity O(1)
      */
     public Node getLeft() {
         return left;
@@ -122,6 +130,7 @@ class Node {
      * Gets the right.
      *
      * @return     The right.
+     * Time complexity O(1)
      */
     public Node getRight() {
         return right;
@@ -130,6 +139,7 @@ class Node {
      * Sets the left.
      *
      * @param      l  The left
+     * Time complexity O(1)
      */
     public void setLeft(final Node l) {
         this.left = l;
@@ -138,6 +148,7 @@ class Node {
      * Sets the right.
      *
      * @param      r  The right
+     * Time complexity O(1)
      */
     public void setRight(final Node r) {
         this.right = r;
@@ -146,6 +157,7 @@ class Node {
      * Sets the value.
      *
      * @param      val   The value
+     * Time complexity O(1)
      */
     public void setValue(final String val) {
         this.value = val;
@@ -173,7 +185,7 @@ class BinaryST {
      * @param      key    The key
      * @param      value  The value
      *
-     * Time complexity : Log(N)
+     * Time complexity : O(n)
      * the insertion will be done based on trees.
      */
     public void put(final Book key, final String value) {
@@ -188,7 +200,7 @@ class BinaryST {
      *
      * @return     The node.
      *
-     * Time complexity : log(N)
+     * Time complexity : O(n)
      * recursively iterates over the tree.
      *
      */
@@ -215,7 +227,7 @@ class BinaryST {
      *
      * @return     The value of the key
      *
-     * Time complexity : Log(n)
+     * Time complexity : O(n)
      * Iteration over tree.
      */
     public String get(final Book key) {
@@ -253,6 +265,7 @@ final class Solution {
      * main function.
      *
      * @param      args  The arguments
+     * Time complexity O(n)
      */
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
