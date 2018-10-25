@@ -1,6 +1,5 @@
-
 /**
- * Class for dynamic median.
+ *the class is for performing dynamic median.
  */
 class DynamicMedian {
     /**
@@ -19,23 +18,26 @@ class DynamicMedian {
         maxObj = new MaxPQ<Double>();
     }
     /**
-     *the method will insert the element
-     *to minheap.
+     * Time complexity is O(logN).
+     * the method will insert the element
+     * to minheap.
      * @param      item  The item
      */
     public void insertAtMin(final double item) {
         minObj.insert(item);
     }
     /**
-     *the method will insert the element
-     *to maxheap.
+     * Time complexity is O(logN).
+     * the method will insert the element
+     * to maxheap.
      * @param      item  The item
      */
     public void insertAtMax(final double item) {
         maxObj.insert(item);
     }
     /**
-     *this method gets the minimum element.
+     * Time complexity is O(1).
+     * this method gets the minimum element.
      * from minheap.
      * @return     The minimum.
      */
@@ -43,7 +45,8 @@ class DynamicMedian {
         return minObj.min();
     }
     /**
-     *this method gets the maximum element.
+     * Time complexity is O(1).
+     * this method gets the maximum element.
      * from maxheap.
      * @return     The minimum.
      */
@@ -51,7 +54,8 @@ class DynamicMedian {
         return maxObj.max();
     }
     /**
-     *this method delete the maximum element.
+     * Time complexity is O(logN).
+     * this method delete the maximum element.
      * from maxheap.
      * @return     The minimum.
      */
@@ -59,7 +63,8 @@ class DynamicMedian {
         return maxObj.delMax();
     }
     /**
-     *this method delete the minimum element.
+     * Time complexity is O(logN).
+     * this method delete the minimum element.
      * from maxheap.
      * @return     The minimum.
      */
@@ -67,7 +72,8 @@ class DynamicMedian {
         return minObj.delMin();
     }
     /**
-     *gets the size of minheap.
+     * Time complexity is O(1).
+     * gets the size of minheap.
      *
      * @return     The minimum size.
      */
@@ -75,6 +81,7 @@ class DynamicMedian {
         return minObj.size();
     }
     /**
+     * Time complexity is O(1).
      * Gets the maximum size of maxheap.
      *
      * @return     The maximum size.
@@ -83,5 +90,3 @@ class DynamicMedian {
         return maxObj.size();
     }
 }
-
-

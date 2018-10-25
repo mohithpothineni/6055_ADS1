@@ -15,6 +15,7 @@ final class Solution {
      *the main method is to.
      *take the input from user.
      * @param      args  The arguments
+     * Time complexity O(N)
      */
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);

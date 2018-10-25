@@ -75,6 +75,7 @@ public class MaxPQ<Key> {
      * Returns true if this priority queue is empty.
      * @return {@code true} if this priority queue is empty;
      *         {@code false} otherwise
+     * Time complexity O(1)
      */
     public boolean isEmpty() {
         return n == 0;
@@ -82,6 +83,7 @@ public class MaxPQ<Key> {
     /**
      * Returns the number of keys on this priority queue.
      * @return the number of keys on this priority queue
+     * Time complexity O(1)
      */
     public int size() {
         return n;
@@ -90,6 +92,7 @@ public class MaxPQ<Key> {
     /**
      * Returns a largest key on this priority queue.
      * @return a largest key on this priority queue
+     * Time complexity O(1)
      */
     public Key max() {
         if (isEmpty()) {
@@ -103,6 +106,7 @@ public class MaxPQ<Key> {
      * // helper function to double the size of the heap array.
      *
      * @param      capacity  The capacity
+     * Time complexity O(N)
      */
     private void resize(final int capacity) {
         Key[] temp = (Key[]) new Object[capacity];
@@ -114,6 +118,7 @@ public class MaxPQ<Key> {
     /**
      * Adds a new key to this priority queue.
      * @param  x the new key to add to this priority queue
+     * Time complexity O(LogN)
      */
     public void insert(final Key x) {
         // double size of array if necessary
@@ -126,6 +131,7 @@ public class MaxPQ<Key> {
     /**
      * Removes and returns a largest key on this priority queue.
      * @return a largest key on this priority queue
+     * Time complexity O(LogN)
      */
     public Key delMax() {
         if (isEmpty()) {
@@ -144,6 +150,7 @@ public class MaxPQ<Key> {
     /**
      * swim method.
      * @param      k     index.
+     * Time complexity O(LogN)
      */
     private void swim(final int k) {
         int k1 = k;
@@ -155,6 +162,7 @@ public class MaxPQ<Key> {
     /**
      * sink method.
      * @param      k     index.
+     * Time complexity O(logN)
      */
     private void sink(final int k) {
         int k1 = k;
@@ -175,6 +183,7 @@ public class MaxPQ<Key> {
      * @param      i     index.
      * @param      j     index.
      * @return     true or false.
+     * Time complexity O(1)
      */
     private boolean less(final int i, final int j) {
         if (comparator == null) {
@@ -187,38 +196,14 @@ public class MaxPQ<Key> {
      * exch method to swap the elements of array.
      * @param      i     index.
      * @param      j     index.
+     * Time complexity O(1)
      */
     private void exch(final int i, final int j) {
         Key swap = pq[i];
         pq[i] = pq[j];
         pq[j] = swap;
     }
-    /**
-     * Determines if maximum heap.
-     * @return     True if maximum heap, False otherwise.
-     */
-    private boolean isMaxHeap() {
-        return isMaxHeap(1);
-    }
-    /**
-     * Determines if maximum heap.
-     * @param      k     index.
-     * @return     True if maximum heap, False otherwise.
-     */
-    private boolean isMaxHeap(final int k) {
-        if (k > n) {
-            return true;
-        }
-        int left = 2 * k;
-        int right = 2 * k + 1;
-        if (left  <= n && less(k, left)) {
-            return false;
-        }
-        if (right <= n && less(k, right)) {
-            return false;
-        }
-        return isMaxHeap(left) && isMaxHeap(right);
-    }
+
 }
 
 
