@@ -102,7 +102,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      * @return {@code true} if this symbol table contains {@code key} and
      *         {@code false} otherwise
      * @throws IllegalArgumentException if {@code key} is {@code null}
-     * The time complexity is O(1).
+     * The time complexity is O(N).
      */
     public boolean contains(final Key key) {
         if (key == null) {
@@ -211,7 +211,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      *
      * @return the smallest key in the symbol table
      * @throws NoSuchElementException if the symbol table is empty
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      */
     public Key min() {
         if (isEmpty()) {
@@ -228,7 +228,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      * @param      x     root element.
      *
      * @return     minimum element in the tree.
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      */
     private Node min(final Node x) {
         if (x.left == null) {
@@ -243,7 +243,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      *
      * @return the largest key in the symbol table
      * @throws NoSuchElementException if the symbol table is empty
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      */
     public Key max() {
         if (isEmpty()) {
@@ -260,7 +260,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      * @param      x     root element.
      *
      * @return     max element in the tree.
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      */
     private Node max(final Node x) {
         if (x.right == null) {
@@ -279,7 +279,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      * table less than or equal to {@code key}
      * @throws NoSuchElementException if there is no such key
      * @throws IllegalArgumentException if {@code key} is {@code null}
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      */
     public Key floor(final Key key) {
         if (key == null) {
@@ -307,7 +307,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      * @param      key   The key
      *
      * @return     floor of the given element.
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      */
     private Node floor(final Node x, final Key key) {
         if (x == null) {
@@ -334,7 +334,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      * @param      key   The key
      *
      * @return     floor eleemnt of given element.
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      */
     public Key floor2(final Key key) {
         return floor2(root, key, null);
@@ -348,7 +348,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      * @param      best  The best
      *
      * @return     floor of the given eleemnt.
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      */
     private Key floor2(final Node x, final Key key, final Key best) {
         if (x == null) {
@@ -373,7 +373,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      * in the symbol table greater than or equal to {@code key}
      * @throws NoSuchElementException if there is no such key
      * @throws IllegalArgumentException if {@code key} is {@code null}
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      */
     public Key ceiling(final Key key) {
         if (key == null) {
@@ -400,7 +400,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      * @param      key   The key
      *
      * @return     the ceiling element
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      */
     private Node ceiling(final Node x, final Key key) {
         if (x == null) {
@@ -428,7 +428,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      * @param  k the order statistic
      * @return the key in the symbol table of rank {@code k}
      * @throws IllegalArgumentException unless {@code k} is between 0 and n
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      */
     public Key select(final int k) {
         if (k < 0 || k >= size()) {
@@ -448,7 +448,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      * @param      k     the index value.
      *
      * @return     element at the index.
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      */
     private Node select(final Node x, final int k) {
         if (x == null) {
@@ -472,7 +472,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      * @return the number of keys in the symbol
      * table strictly less than {@code key}
      * @throws IllegalArgumentException if {@code key} is {@code null}
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      */
     public int rank(final Key key) {
         if (key == null) {
@@ -489,7 +489,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      * @param      x     root node
      *
      * @return     rank of the given key.
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      */
     private int rank(final Key key, final Node x) {
         if (x == null) {
@@ -511,7 +511,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      * use the foreach notation: {@code for (Key key : st.keys())}.
      *
      * @return all keys in the symbol table
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      */
     public Iterable<Key> keys() {
         if (isEmpty()) {
@@ -530,7 +530,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      *         (inclusive) and {@code hi} (inclusive)
      * @throws IllegalArgumentException if either {@code lo} or {@code hi}
      *         is {@code null}
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      */
     public Iterable<Key> keys(final Key lo, final Key hi) {
         if (lo == null) {
@@ -553,7 +553,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      * @param      queue  The queue
      * @param      lo     The lower
      * @param      hi     The higher
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      */
     private void keys(final Node x, final ArrayDeque<Key> queue,
                       final Key lo, final Key hi) {
