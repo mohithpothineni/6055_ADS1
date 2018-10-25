@@ -1,178 +1,122 @@
 import java.util.Scanner;
 
 /**
- * LinkedList implementaing Stack.
- *
- * @param      <T>   generic mode.
+ * NQueue class implements queue funtions.
+ * It contain enqueue and dequeue methods.
  */
-class CircularLinkedList<T> {
-
+class NQueue {
     /**
-     * generic type node.
+     * head Node to point first element.
      */
-    private Node<T> head = null;
-
+    private Node head = null;
     /**
-     * reference to the tail/last part of list.
+     * tail Node to point last element.
      */
-    private Node<T> tail = null;
-
+    private Node tail = null;
     /**
-     * reference variable.
+     * current Node to point current element.
      */
-    private Node<T> current = null;
-
+    private Node current = null;
     /**
-     * Class for node.
-     *
-     * @param      <T>   generic mode.
+     * It contains data and node of next element.
      */
-    class Node<T> {
+    class Node {
         /**
-         * T data item.
+         * data variable to Store data.
          */
-        private T data;
-
+        private int data;
         /**
-         * Node next.
+         * next is Node vatiable has next Node.
          */
-        private Node<T> next;
-
+        private Node next;
     }
-
     /**
-     * check whether stack is empty or not.
-     * @return true or false.
+     * Time complexity is O(1).
+     * checks whether queue is empty or Not.
+     * @return true are flase.
      */
     public boolean isEmpty() {
         return head == null;
     }
-
     /**
-     * push method is used to push the item.
-     * @param item element to push.
+     * Time complexity is O(1).
+     * enqueue method to enter into queue.
+     * @param element which is to be entered in the queue.
      */
-    public void add(final T item) {
+    public void enqueue(final int element) {
         if (head == null) {
-            head = new Node<T>();
-            head.data = item;
+            head = new Node();
+            tail = new Node();
+            head.data = element;
             tail = head;
-            head.next = tail;
-        } else {
-            Node<T> newnode = new Node<T>();
-            tail.next = newnode;
-            newnode.data = item;
-            newnode.next = head;
-            tail = newnode;
+            return;
         }
-
+        current = new Node();
+        current.data = element;
+        tail.next = current;
+        tail = current;
     }
 
     /**
-     * Gets the next element in list.
-     *
-     * @return     The next element.
+     * Time complexity is O(1).
+     * dequeue method to delete.
+     * @return the element that is deleted.
      */
-    public T getNext() {
-        if (current == null) {
-            current = head;
-        }
-        Node<T> tmp = current;
-        current = tmp.next;
-        return tmp.data;
-    }
-
-    /**
-     * removes an element form the list.
-     *
-     * @param      element  The element to be removed
-     *
-     * @return     the element popped.
-     */
-    public T remove(final T element) {
-        //if single element present
-        if (head.next.equals(head) && head.data.equals(element)) {
-            T tmp = head.data;
+    public int dequeue() {
+        Node temp = new Node();
+        if (head == tail) {
+            temp = head;
             head = null;
-            return tmp;
-        }
-
-        //if 1st element needsto be deleted
-        if (head.data.equals(element)) {
-            head = head.next;
-            tail.next = head;
-            return element;
-        }
-
-        //if last one to be removed
-        if (tail.data.equals(element)) {
-            Node<T> tempp = head;
-            while (!tempp.next.equals(tail)) {
-                tempp = tempp.next;
-            }
-            tempp.next = head;
-            tail = tempp;
-            return element;
-        }
-
-
-        //normal cases
-        Node<T> currenttmp = head;
-        while (!currenttmp.next.data.equals(element)) {
-            currenttmp = currenttmp.next;
-        }
-        Node<T> tmp2 = currenttmp.next.next;
-        currenttmp.next = tmp2;
-
-        return element;
-
+            tail = null;
+            return temp.data;
+         }
+         temp = head;
+         head = head.next;
+         return temp.data;
     }
-
 }
 
 /**
- * Solution class.
+ * Solution class contain main method.
  */
 public final class Solution {
-
     /**
-     * Constructs the object.
+     * default Solution constructor.
      */
     private Solution() {
 
     }
-
     /**
-     * main takes input from user and prints output to console.
+     * main class to handle input and output.
      *
-     * @param      args  The commandline arguments
+     * @param args commandline arguments.
      */
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
-        int inputcount = scan.nextInt();
+        int num = scan.nextInt();
+        while (scan.hasNext()) {
+            NQueue n = new NQueue();
+            int count = scan.nextInt();
+            int cut = scan.nextInt();
 
-        for (int inp = 0; inp < inputcount; inp++) {
-            int noOfPersons = scan.nextInt();
-            int mthShift = scan.nextInt();
-            CircularLinkedList<Integer> cl = new CircularLinkedList<Integer>();
-
-            for (int i = 0; i < noOfPersons; i++) {
-                cl.add(i);
+            for (int i = 0; i < count; i++) {
+                n.enqueue(i);
             }
 
-            String str = "";
-
-            while (!cl.isEmpty()) {
-                int t2 = 0;
-                for (int i = 0; i < mthShift; i++) {
-                    t2 = cl.getNext();
+            String result = "";
+            while (!n.isEmpty()) {
+                int t2 = 0, t1 = 0;
+                for (int i = 0; i < cut; i++) {
+                    if (i != cut - 1) {
+                        t1 = n.dequeue();
+                        n.enqueue(t1);
+                    } else {
+                        t2 = n.dequeue();
+                    }
                 }
-                str += cl.remove(t2) + " ";
+                result += t2 + " ";
             }
-
-            System.out.println(str.trim());
+            System.out.println(result.trim());
         }
-
     }
-
 }
