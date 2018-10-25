@@ -3,7 +3,7 @@
  * Class for merge.
  */
 class MergeSort {
-    
+
     /**
      * threshold value for calling insertion sort.
      */
@@ -13,15 +13,15 @@ class MergeSort {
      * Constructs the object.
      */
     MergeSort() {
-    
+
     }
-    
+
     /**
      * Method to merge two arrays.
      * Time complexity : O(N).
-     * It iterates over the number of elementds in the two subarray 
+     * It iterates over the number of elementds in the two subarray
      * so complexity tends to no of elementscombined in those arrays.
-     * 
+     *
      * @param      array  The array
      * @param      aux    The auxiliary
      * @param      lo     The lower value
@@ -29,7 +29,7 @@ class MergeSort {
      * @param      hi     The higher value
      */
     public void merge(final Comparable[] array, final Comparable[] aux,
-        final int lo, final int mid, final int hi) {
+                      final int lo, final int mid, final int hi) {
         int i = lo;
         int j = mid + 1;
         for (int k = lo; k <= hi; k++) {
@@ -47,17 +47,17 @@ class MergeSort {
 
     /**
      * Method for sorting.
-     * Time complexity : O(log(N)).
-     * According to the depth of decission tree made the complexity 
-     * will be of logarithmic of n to the base 2.  
-     * 
+     * Time complexity : O(Nlog(N)).
+     * According to the depth of decission tree made the complexity
+     * will be of logarithmic of n to the base 2.
+     *
      * @param      array  The array
      * @param      aux    The auxiliary array
      * @param      lo     The lower value
      * @param      hi     The higher value
      */
     public void sort(final Comparable[] array, final Comparable[] aux,
-        final int lo, final int hi) {
+                     final int lo, final int hi) {
         if (hi <= lo + x) {
             InsertionSort.insertionSort(aux, lo, hi);
             System.out.println("Insertion sort method invoked...");
@@ -80,16 +80,16 @@ class MergeSort {
     /**
      * Rearranges the array in ascending order, using the natural order.
      * Time complexity : O(N).
-     * cloning takes n iterations for copying. 
-     * 
+     * cloning takes n iterations for copying.
+     *
      * @param      a     Comparable array.
      */
     public void sort(final Comparable[] a) {
         Comparable[] aux = a.clone();
         sort(aux, a, 0, a.length - 1);
     }
-    
-    
+
+
     /**
      * Method to print the values of the Comparable array.
      * Time complexity of this method is O(N).
