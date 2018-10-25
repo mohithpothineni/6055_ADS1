@@ -19,9 +19,9 @@ final class Solution {
      * prints the output.
      *
      * @param      args  The commandline arguments
-     * 
+     *
      * Time complexity : O(n)
-     * n inputs from user. 
+     * n inputs from user.
      */
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);

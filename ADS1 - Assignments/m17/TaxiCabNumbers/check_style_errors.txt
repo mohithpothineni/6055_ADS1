@@ -1,5 +1,2 @@
 Starting audit...
-[ERROR] C:\Users\Mohath\Desktop\6055_ADS1\ADS1 - Assignments\m17\TaxiCabNumbers\Solution.java:22: Line has trailing spaces. [RegexpSingleline]
-[ERROR] C:\Users\Mohath\Desktop\6055_ADS1\ADS1 - Assignments\m17\TaxiCabNumbers\Solution.java:24: Line has trailing spaces. [RegexpSingleline]
 Audit done.
-Checkstyle ends with 2 errors.
