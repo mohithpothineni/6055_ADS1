@@ -38,15 +38,17 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
     /**
      * size of array.
      *
-     * @return     { description_of_the_return_value }
+     * @return     size of array
+     * Time complexity O(1)
      */
-     public int size() {
+    public int size() {
         return n;
     }
     /**
      * Determines if empty.
      *
      * @return     True if empty, False otherwise.
+     * Time complexity O(1)
      */
     public boolean isEmpty() {
         return n == 0;
@@ -55,6 +57,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
      * resize array.
      *
      * @param      capacity  The capacity
+     * Time complexity O(N)
      */
     public void resize(final int capacity) {
         Key[] tkey = (Key[]) new Comparable[capacity];
@@ -71,8 +74,8 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
      *
      * @param      k     The key.
      * @param      v     The value.
-     * 
-     * Time complexity : log(N).
+     *
+     * Time complexity O(N).
      */
     public void put(final Key k, final Value v) {
         if (k == null) {
@@ -104,6 +107,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
      * @param      k    The key.
      *
      * @return     True or false.
+     * Time complexity O(logN)
      */
     public boolean contains(final Key k) {
         return get(k) != null;
@@ -112,6 +116,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
      * delete the key.
      *
      * @param      key   The key
+     * Time complexity O(N)
      */
     public void delete(final Key key) {
         final int four = 4;
@@ -144,8 +149,8 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
      * @param      k     The key.
      *
      * @return     The value of the given key.
-     * 
-     * Time complexity : log(N)
+     *
+     * Time complexity : O(log(N))
      */
     public Value get(final Key k) {
         if (isEmpty()) {
@@ -166,6 +171,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
      * Method to find maximum key.
      *
      * @return     the maximum key.
+     * Time complexity O(1)
      */
     public Key max() {
         return keys[n - 1];
@@ -176,6 +182,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
      * @param      key   The key
      *
      * @return     the floor of the key
+     * Time complexity O(LogN)
      */
     public Key floor(final Key key) {
         if (key == null) {
@@ -197,6 +204,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
      * @param      key   The key
      *
      * @return     The rank of the given key
+     * Time complexity O(LogN)
      */
     public int rank(final Key key) {
         if (key == null) {
@@ -220,6 +228,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
      * Minimum key.
      *
      * @return     the minimum key
+     * Time complexity O(1)
      */
     public Key min() {
         return keys[0];
@@ -228,12 +237,14 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
      * Iterate through keys.
      *
      * @return     keys
+     * Time complexity O(N)
      */
     public ArrayList<String> keys() {
         return keys(min(), max());
     }
     /**
      * Method to delete the minimum key.
+     * Time complexity O(N)
      */
     public void deleteMin() {
         delete(min());
@@ -245,6 +256,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
      * @param      hi    The higher
      *
      * @return     keys
+     * Time complexity O(N)
      */
     public ArrayList<String> keys(final Key lo, final Key hi) {
         if (lo == null) {
@@ -282,10 +294,11 @@ final class Solution {
      * main function.
      *
      * @param      args  The arguments
+     * Time complexity O(N)
      */
     public static void main(final String[] args) {
         BinarySearchST<String, Integer> bs =
-        new BinarySearchST<String, Integer>();
+            new BinarySearchST<String, Integer>();
         Scanner sc = new Scanner(System.in);
         String data = sc.nextLine();
         String[] tokens = data.split(" ");
@@ -297,31 +310,31 @@ final class Solution {
             String input = sc.nextLine();
             String[] inp = input.split(" ");
             switch (inp[0]) {
-                case "max":
+            case "max":
                 System.out.println(bs.max());
                 break;
-                case "floor":
+            case "floor":
                 System.out.println(bs.floor(inp[1]));
                 break;
-                case "rank":
+            case "rank":
                 System.out.println(bs.rank(inp[1]));
                 break;
-                case "deleteMin":
+            case "deleteMin":
                 bs.deleteMin();
                 break;
-                case "contains":
+            case "contains":
                 System.out.println(bs.contains(inp[1]));
                 break;
-                case "keys":
+            case "keys":
                 ArrayList<String> l = bs.keys();
                 for (int i = 0; i < l.size(); i++) {
                     System.out.println(l.get(i) + " " + bs.get(l.get(i)));
                 }
                 break;
-                case "get":
+            case "get":
                 System.out.println(bs.get(inp[1]));
                 break;
-                default:
+            default:
                 break;
             }
         }
