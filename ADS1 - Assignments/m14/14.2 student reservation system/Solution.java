@@ -273,7 +273,7 @@ class StudentsData {
 
     /**
      * Shows the alloted students.
-     * Time complexity : O(n^2)
+     * Time complexity : O(n)
      * searching and assigning.
      */
     void showAlloted() {
