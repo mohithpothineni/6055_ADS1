@@ -1,0 +1,7 @@
+[master 1927fff] "ads1_m11_a1_v2: 4/4 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 1/1 "
+ 4 files changed, 16 insertions(+), 8 deletions(-)
+ create mode 100644 ADS1 - Assignments/m11/11.1 Cutoff Quicksort to Insertion Sort - updated/md5/score.txt
+ create mode 100644 ADS1 - Assignments/m11/11.1 Cutoff Quicksort to Insertion Sort - updated/result/score.json
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+To https://github.com/mohithpothineni/6055_ADS1.git
+   abb6e51..1927fff  master -> master

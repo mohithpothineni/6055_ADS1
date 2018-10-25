@@ -1,0 +1,5 @@
+[master ad6c45f] "ads1_m16_a1: 3/3 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 1/1 "
+ 6 files changed, 17 insertions(+), 4 deletions(-)
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+To https://github.com/mohithpothineni/6055_ADS1.git
+   ebbca2f..ad6c45f  master -> master

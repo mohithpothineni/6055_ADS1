@@ -1,0 +1,48 @@
+warning: LF will be replaced by CRLF in ADS1 - Assignments/m13/13.1 isMinHeap/testcases/input001.txt.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in ADS1 - Assignments/m13/13.1 isMinHeap/testcases/input002.txt.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in ADS1 - Assignments/m13/13.1 isMinHeap/testcases/input003.txt.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in ADS1 - Assignments/m13/13.1 isMinHeap/testcases/input004.txt.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in ADS1 - Assignments/m13/13.1 isMinHeap/testcases/input005.txt.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in ADS1 - Assignments/m13/13.1 isMinHeap/testcases/problem_id.txt.
+The file will have its original line endings in your working directory.
+[master bfcf477] "ads1_m13_a1: 5/5 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 1/1 "
+ 29 files changed, 380 insertions(+)
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/13. isMinheap.docx
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/MinHeap.class
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/Solution.class
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/Solution.java
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/check_style_errors.txt
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/git_output.txt
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/md5/input001.txt
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/md5/input002.txt
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/md5/input003.txt
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/md5/input004.txt
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/md5/input005.txt
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/md5/output001.txt
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/md5/output002.txt
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/md5/output003.txt
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/md5/output004.txt
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/md5/output005.txt
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/md5/problem_id.txt
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/testcases/input001.txt
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/testcases/input002.txt
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/testcases/input003.txt
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/testcases/input004.txt
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/testcases/input005.txt
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/testcases/output001.txt
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/testcases/output002.txt
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/testcases/output003.txt
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/testcases/output004.txt
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/testcases/output005.txt
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/testcases/problem_id.txt
+ create mode 100644 ADS1 - Assignments/m13/13.1 isMinHeap/testcases_output.txt
+fatal: NotSupportedException encountered.
+   The ServicePointManager does not support proxies with the https scheme.
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+To https://github.com/mohithpothineni/6055_ADS1.git
+   467bb40..bfcf477  master -> master

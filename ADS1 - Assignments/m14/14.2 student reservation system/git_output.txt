@@ -1,0 +1,7 @@
+[master abb6e51] "ads1_m14_a2: 6/6 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 1/1 "
+ 3 files changed, 3 insertions(+), 1 deletion(-)
+ create mode 100644 ADS1 - Assignments/m14/14.2 student reservation system/md5/score.txt
+ create mode 100644 ADS1 - Assignments/m14/14.2 student reservation system/result/score.json
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+To https://github.com/mohithpothineni/6055_ADS1.git
+   724e3ff..abb6e51  master -> master
