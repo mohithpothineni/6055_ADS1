@@ -1,4 +1,3 @@
-import java.util.Hashtable;
 import java.util.Scanner;
 
 /**
@@ -38,13 +37,13 @@ class RansomNote {
      * declare it as replicable or not.
      */
     boolean canReplicate() {
-        Hashtable<String, Integer> magazineContent
-            = new Hashtable<String, Integer>();
-        Hashtable<String, Integer> noteContent
-            = new Hashtable<String, Integer>();
+        SeparateChainingHashST<String, Integer> magazineContent
+            = new SeparateChainingHashST<String, Integer>();
+        SeparateChainingHashST<String, Integer> noteContent
+            = new SeparateChainingHashST<String, Integer>();
 
         for (String i : this.magazine) {
-            if (magazineContent.containsKey(i)) {
+            if (magazineContent.contains(i)) {
                 magazineContent.put(i, magazineContent.get(i) + 1);
             } else {
                 magazineContent.put(i, 1);
@@ -52,11 +51,11 @@ class RansomNote {
         }
 
         for (String j : this.note) {
-            if (!magazineContent.containsKey(j)) {
+            if (!magazineContent.contains(j)) {
                 return false;
             }
 
-            if (noteContent.containsKey(j)) {
+            if (noteContent.contains(j)) {
                 int t = noteContent.get(j) + 1;
                 if (t > magazineContent.get(j)) {
                     return false;
