@@ -232,7 +232,7 @@ Neil Cadigan
 Megon
 Meili Cady
 ----------------------------------------
-########## Testcase 3: Failed ##########
+########## Testcase 3: Passed ##########
 Expected Output: 
 Stuart B. MacBride
 Wayne Pacelle
@@ -1289,6 +1289,9 @@ Joseph A. Maciariello
 David Packard
 Meredith Jaeger
 Rebecca Pacheco
+Pamela Palmer
+Parker J. Palmer
+Scott Palmer
 Christopher N. Page
 Ellie Macdonald
 Portia MacIntosh

@@ -159,7 +159,7 @@ final class Solution {
             case "LE":
                 dummy1 = studentdata.min();
                 dummy2 = new Student(-1, "dummy2",
-                    Double.parseDouble(tokens[1]));
+                    (Double.parseDouble(tokens[1]) + precission));
                 for (Student key : studentdata.keys(dummy1, dummy2)) {
                     System.out.println(key.getName());
                 }
