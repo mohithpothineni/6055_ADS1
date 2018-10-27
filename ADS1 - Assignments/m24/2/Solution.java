@@ -122,6 +122,10 @@ final class Solution {
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
 
+        //using redblack bst
+        //complexity of rbbst for put logn
+        //and for get logn.
+
         //student data parsing and storing.
         RedBlackBST<Student, String> studentdata =
             new RedBlackBST<Student, String>();
