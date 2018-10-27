@@ -1,0 +1,10 @@
+Starting audit...
+[ERROR] C:\Users\Mohath\Desktop\6055_ADS1\ADS1 - Assignments\m24\2\Solution.java:81:26: Parameter other should be final. [FinalParameters]
+[ERROR] C:\Users\Mohath\Desktop\6055_ADS1\ADS1 - Assignments\m24\2\Solution.java:132: Line is longer than 80 characters (found 104). [LineLength]
+[ERROR] C:\Users\Mohath\Desktop\6055_ADS1\ADS1 - Assignments\m24\2\Solution.java:145: Line is longer than 80 characters (found 82). [LineLength]
+[ERROR] C:\Users\Mohath\Desktop\6055_ADS1\ADS1 - Assignments\m24\2\Solution.java:146: Line is longer than 80 characters (found 94). [LineLength]
+[ERROR] C:\Users\Mohath\Desktop\6055_ADS1\ADS1 - Assignments\m24\2\Solution.java:146:85: '0.00005' is a magic number. [MagicNumber]
+[ERROR] C:\Users\Mohath\Desktop\6055_ADS1\ADS1 - Assignments\m24\2\Solution.java:154: Line is longer than 80 characters (found 82). [LineLength]
+[ERROR] C:\Users\Mohath\Desktop\6055_ADS1\ADS1 - Assignments\m24\2\Solution.java:161: Line is longer than 80 characters (found 82). [LineLength]
+Audit done.
+Checkstyle ends with 7 errors.
