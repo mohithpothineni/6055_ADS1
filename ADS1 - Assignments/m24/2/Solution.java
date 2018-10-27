@@ -78,7 +78,7 @@ class Student implements Comparable<Student> {
      * @return     int comparision flag
      * Time complexity O(1).
      */
-    public int compareTo(Student other) {
+    public int compareTo(final Student other) {
         int tmp = this.getMarks().compareTo(other.getMarks());
         if (tmp != 0) {
             return tmp;
@@ -129,21 +129,24 @@ final class Solution {
         for (int i = 0; i < numofstudents; i++) {
             String[] tokens = scan.nextLine().split(",");
             Integer rollcall = Integer.parseInt(tokens[0]);
-            studentdata.put(new Student(rollcall, tokens[1], Double.parseDouble(tokens[2])), tokens[1]);
+            studentdata.put(new Student(rollcall, tokens[1],
+                Double.parseDouble(tokens[2])), tokens[1]);
         }
 
         //for operations on student data.
         int numofoperations = Integer.parseInt(scan.nextLine());
         Student dummy1 = null;
         Student dummy2 = null;
-
+        final double precission = 0.00005;
         for (int i = 0; i < numofoperations; i++) {
             String[] tokens = scan.nextLine().split(" ");
 
             switch (tokens[0]) {
             case "BE":
-                dummy1 = new Student(-1, "dummy1", Double.parseDouble(tokens[1]));
-                dummy2 = new Student(-1, "dummy2", (Double.parseDouble(tokens[2]) + 0.00005));
+                dummy1 = new Student(-1, "dummy1",
+                    Double.parseDouble(tokens[1]));
+                dummy2 = new Student(-1, "dummy2",
+                    (Double.parseDouble(tokens[2]) + precission));
 
                 for (Student key : studentdata.keys(dummy1, dummy2)) {
                     System.out.println(key.getName());
@@ -151,14 +154,16 @@ final class Solution {
                 break;
             case "LE":
                 dummy1 = studentdata.min();
-                dummy2 = new Student(-1, "dummy2", Double.parseDouble(tokens[1]));
+                dummy2 = new Student(-1, "dummy2",
+                    Double.parseDouble(tokens[1]));
                 for (Student key : studentdata.keys(dummy1, dummy2)) {
                     System.out.println(key.getName());
                 }
                 break;
             case "GE":
                 dummy2 = studentdata.max();
-                dummy1 = new Student(-1, "dummy1", Double.parseDouble(tokens[1]));
+                dummy1 = new Student(-1, "dummy1",
+                    Double.parseDouble(tokens[1]));
                 for (Student key : studentdata.keys(dummy1, dummy2)) {
                     System.out.println(key.getName());
                 }
